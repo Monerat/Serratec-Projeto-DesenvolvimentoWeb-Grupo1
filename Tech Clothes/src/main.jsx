@@ -10,6 +10,7 @@ import {
 import Produtos from './pages/Produtos.jsx';
 import Login from './pages/Login.jsx';
 import Carrinho from './pages/Carrinho.jsx';
+import ProdutoEspecifico from './pages/ProdutoEspecifico.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/produtos/:id", //listar Produto especifico
-    element: <div>produto especifico</div>
+    element: <ProdutoEspecifico />
   },
   {
     path: "/carrinho", //Carrinho de compras
