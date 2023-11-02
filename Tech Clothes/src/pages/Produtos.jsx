@@ -7,8 +7,6 @@ const Produtos = () => {
     const [produtos, setProdutos] = useState([])
     const [pesquisa, setPesquisa] = useState('')
 
-    var nPesquisou = 0
-
     const getProdutos = async () => {
         const response = await api.get('/produtos')
         const produtosFiltrados = response.data.filter((produto) => produto.quantidade !== 0) //Filtra os produtos com estoque zerado
