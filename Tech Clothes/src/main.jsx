@@ -7,6 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Produtos from './pages/Produtos.jsx';
+import Carrinho from './pages/Carrinho.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/", //login
@@ -14,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/produtos", //listar Produtos
-    element: <div>produtos</div>
+    element: <Produtos />
   },
   {
     path: "/produtos/:id", //listar Produto especifico
@@ -22,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/carrinho", //Carrinho de compras
-    element: <div>Carrinho</div>
+    element: <Carrinho />
   },
   {
     path: "/pedidos", //Historico de Pedidos
