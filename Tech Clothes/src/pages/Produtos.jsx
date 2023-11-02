@@ -19,10 +19,10 @@ const Produtos = () => {
         <>
         <NavBar />
         {produtos.map(
-            ({  nome, quantidade, id, imgurl}) => (
+            ({  nome, preco, id, imgurl}) => (
                 <CardProduto
                     nome={nome}
-                    quantidade={quantidade}
+                    preco={preco}
                     id={id}
                     getProdutos={getProdutos}
                     imgurl={imgurl}
