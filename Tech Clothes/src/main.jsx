@@ -1,20 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+//import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Produtos from './pages/Produtos.jsx';
+import Login from './pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/", //login
-    element: <div>Login</div>,
+    path: "/login", //login
+    element: <Login />
   },
   {
     path: "/produtos", //listar Produtos
-    element: <div>produtos</div>
+    element: <Produtos />
   },
   {
     path: "/produtos/:id", //listar Produto especifico
