@@ -7,11 +7,12 @@ const Produtos = () => {
     const [produtos, setProdutos] = useState([])
     const [pesquisa, setPesquisa] = useState('')
 
-    var nPesquisou = true
+    var nPesquisou = 0
 
     const getProdutos = async () => {
         const response = await api.get('/produtos')
-        setProdutos(response.data)
+        const produtosFiltrados = response.data.filter((produto) => produto.quantidade !== 0) //Filtra os produtos com estoque zerado
+        setProdutos(produtosFiltrados)
     }
     
     useEffect(() => {

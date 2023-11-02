@@ -61,6 +61,15 @@
       "imgurl": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": 30,
       "id": 6
+    },
+    {
+      "nome": "Estoque zerado",
+      "preco": 29.99,
+      "quantidade": 0,
+      "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+      "imgurl": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "favoritos": 30,
+      "id": 7
     }
   ],
   "pedidos": [
