@@ -1,9 +1,10 @@
 import { CarrinhoContext } from "../context/CarrinhoContext"
 import { useContext, useEffect, useState } from "react"
 import { api } from "../api/api"
+import NavBar from "../components/Navbar"
 
 const Carrinho = () =>{
-    [pedidos, setPedidos] = useState([])
+    //[pedidos, setPedidos] = useState([])
     // const {carrinho, setCarrinho} = useContext(CarrinhoContext)
 
     // const handleAddCarrinho = (e) =>{
@@ -30,6 +31,7 @@ const Carrinho = () =>{
 
     return (
         <>
+            <NavBar />
         {/* {carrinho.map(
             ({  nome, quantidade, imgurl}) => (
                 <Item

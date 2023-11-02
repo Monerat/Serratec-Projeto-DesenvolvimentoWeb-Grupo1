@@ -9,4 +9,3 @@ export const CarrinhoProvider = ({ children }) => {
         <CarrinhoContext.Provider value={{carrinho, setCarrinho}}>{ children }</CarrinhoContext.Provider>
     )
 }
-

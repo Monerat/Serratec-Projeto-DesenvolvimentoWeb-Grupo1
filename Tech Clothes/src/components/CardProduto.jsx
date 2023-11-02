@@ -5,6 +5,7 @@ const CardProduto = ({ nome, quantidade, imgurl,id }) => {
             <img src={imgurl} />
             <p> id = {id} nome = {nome} quantidade em estoque {quantidade}</p>
         </div>
+        
     )
 }
 
