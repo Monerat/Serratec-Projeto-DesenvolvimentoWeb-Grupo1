@@ -1,46 +1,25 @@
-import { CarrinhoContext } from "../context/CarrinhoContext"
+import { Context } from "../context/Context"
 import { useContext, useEffect, useState } from "react"
-import { api } from "../api/api"
+
 import NavBar from "../components/Navbar"
+import CardCarrinho from "../components/CardCarrinho"
 
 const Carrinho = () =>{
-    //[pedidos, setPedidos] = useState([])
-    // const {carrinho, setCarrinho} = useContext(CarrinhoContext)
-
-    // const handleAddCarrinho = (e) =>{
-    //     e.preventDefault()
-    //     setCarrinho([...carrinho, {
-    //         "id": 1,
-    //         "nome": "Mouse com fio Logitech",
-    //         "preco": 29.99,
-    //         "quantidade": 37,
-    //         "imgurl": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg"
-    //     }])
-    // }
-    
-    // handleAddCarrinho()
-    // const getPedidos = async () => {
-    //     const response = await api.get('/pedidos')
-    //     console.log(response.data)
-    //     setPedidos(response.data)
-    // }
-
-    // useEffect(() => {
-    //     getPedidos()
-    // }, [])
-
+    const {carrinho, setCarrinho, usuarios, setUsuarios} = useContext(Context)
+   
     return (
         <>
             <NavBar />
-        {/* {carrinho.map(
-            ({  nome, quantidade, imgurl}) => (
-                <Item
-                    nome={nome}
-                    quantidade={quantidade}
-                    imgurl={imgurl}
-                />
-            )
-        )} */}
+            {carrinho.map(
+                ({  nome, quantidade, imgurl, preco }) => (
+                    <CardCarrinho
+                        nome={nome}
+                        quantidade={quantidade}
+                        preco={preco}
+                        imgurl={imgurl}
+                    />
+                )
+            )}
         </>
     )
 }

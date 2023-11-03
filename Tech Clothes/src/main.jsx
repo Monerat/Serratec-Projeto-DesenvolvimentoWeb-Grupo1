@@ -12,6 +12,7 @@ import Login from './pages/Login.jsx';
 import Carrinho from './pages/Carrinho.jsx';
 import ProdutoEspecifico from './pages/ProdutoEspecifico.jsx'
 import Pedidos from './pages/Pedidos.jsx';
+import { Provider } from './context/Context.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

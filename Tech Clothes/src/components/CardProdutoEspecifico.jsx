@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { api } from "../api/api"
+import { Context } from "../context/Context"
+import { useContext, useEffect, useState } from "react"
 
-const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,quantidade,getProdutos }) => {
-
+const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,estoque,getProdutos }) => {
+    const {carrinho, setCarrinho, usuarios, setUsuarios} = useContext(Context)
+    const [quantidade, setQuantidade] = useState()
 
     const handleLike = () => {
         api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 })
@@ -10,10 +13,10 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,quan
     }   
 
     const handleQuantidade = () => {
-        if(quantidade < quantidade){
-        api.patch(),{quantidade: quantidade + 1}
+        if(quantidade < estoque){
+        api.patch(),{estoque: estoque + 1}
         }else{
-            quantidade = 1
+            estoque = 1
         }
     }
     
@@ -30,8 +33,12 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,quan
           <button onClick={handleLike} >Gostei: {favoritos}</button>
           <h3>Preço: R$ {preco}</h3>
           <p>{descricao}</p>
-          <h4>Disponíveis {quantidade} Unidades</h4>
-          <button  onClick={handleQuantidade}>QUANTIDADE: {quantidade}</button>
+          <h4>Disponíveis {estoque} Unidades</h4>
+          <div>
+            <button onClick={handleQuantidade}>-</button>
+            <p>Quantidade de unidades: {quantidade}</p>
+          </div>
+          
           <br />
           <br />
           <button>Adicionar ao Carrinho</button>

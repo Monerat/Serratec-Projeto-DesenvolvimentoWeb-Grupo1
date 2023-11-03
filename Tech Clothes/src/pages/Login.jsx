@@ -1,90 +1,71 @@
 
 import NavBar from "../components/Navbar"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { api } from "../api/api"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
-
-
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+  const [usuario, setUsuario] = useState([])
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const [email, setEmail] = useState ('')
-  const [senha, setSenha] = useState ('')
-  const [listaUsuarios, setListaUsuarios] = useState([])
+  const getUser = async () => {
+    setIsLoading(true);
+    const response = await api.get("/users", {
+      params: {
+        "email": email,
+        "senha": senha
+      }
+    });
+    setUsuario(response.data);
+    setIsLoading(false);
+  };
 
-  const handlechangeEmail = (e) => {
-    setEmail(e.target.value)
-  }
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
 
-  const handlechangeSenha = (e) => {
-    setSenha(e.target.value)
-  }
+  const handleSenha = (event) => {
+    setSenha(event.target.value);
+  };
 
-  const handleListaUsuarios = (e) => {    //vou aproveitar esse método para cadastro.
-    e.preventDefault ()
-    setListaUsuarios([...listaUsuarios, {email,senha}])
-    alert('Usuário logado!')
-  }
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    await getUser();
+    handleAuth();
+  };
 
-
-  
-
-  const handlePesquisarUsuario = (e) =>{
-    e.preventDefault()
-    setListaUsuarios(listaUsuarios.filter((Login) => {listaUsuarios.email === Login.email && listaUsuarios.senha === Login.senha
-    return alert('Login efetuado com sucesso!')  
-  }))
-     alert ('Dados inválidos!') 
-    
-}
-
-  
-
+  const handleAuth = () => {
+    if(!isLoading){
+      if (usuario[0] === undefined) {
+        alert("usuario ou senha inválidos");
+      } else {
+        navigate("/produtos");
+      }
+    }
+    else handleAuth()
+  };
 
   return (
-    
     <>
-     <NavBar/>  
-     <div style={{
-  backgroundImage: 'url("https://images.alphacoders.com/103/103593.jpg")',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  height: '80vh', 
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-}}>
-  <Form onSubmit={handlePesquisarUsuario}>
-    <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
-      <Form.Label>Email</Form.Label>
-      <Form.Control onChange={handlechangeEmail} type="email" placeholder="Informe seu Email" />
-      <Form.Text className="text-muted">
-        Sua senha não será compartilhada com ninguém
-      </Form.Text>
-    </Form.Group>
-
-    <Form.Group className="mb-3" controlId="formBasicPassword" style={{ margin: '10px' }}>
-      <Form.Label>Senha</Form.Label>
-      <Form.Control onChange={handlechangeSenha} type="password" placeholder="Informe sua Senha" />
-    </Form.Group>
-
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-      <Button variant="primary" type="submit" style={{ margin: '10px' }}>
-        Logar
-      </Button>
-      <Button variant="primary" type="submit" style={{ margin: '10px' }}>
-        Cadastrar
-      </Button>
-    </div>
-  </Form>
-</div>
-
-   
+      <form onSubmit={handleLogin}>
+        <label>email
+          <br />
+          <input type="text" onChange={handleEmail} />
+        </label>
+        <br />
+        <label>senha
+          <br />
+          <input type="text" onChange={handleSenha} />
+        </label>
+        <br />
+        <button type="submit">Logar</button>
+      </form>
     </>
   )
 }

@@ -8,20 +8,17 @@ import {useParams} from "react-router-dom";
 
 const ProdutoEspecifico = () => {
     const [produtos, setProdutos] = useState([])
-    const {id} = useParams ()
     
+    const {id} = useParams ()
 
     const getProdutos = async () => {
         const response = await api.get(`/produtos/${id}`)
         setProdutos(response.data)
     }
 
-    
     useEffect(() => {
         getProdutos()
     }, [])
-
-    
 
     return (
         <>
