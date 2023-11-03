@@ -10,7 +10,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,esto
     
 
   const handleAddCarrinho = () => {
-    const produto={nome,preco,imgurl,quantidadex};
+    const produto={nome,preco,imgurl,quantidade};
        
     setCarrinho([ ... carrinho, produto])
     

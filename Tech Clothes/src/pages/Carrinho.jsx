@@ -6,19 +6,25 @@ import CardCarrinho from "../components/CardCarrinho"
 const Carrinho = () =>{
     const {carrinho, setCarrinho, usuario, setUsuario} = useContext(Context)
     const [pedido, setPedido] = useState({})
+    const [totalPedido, setTotalPedido] = useState(0.0)
     
-    var totalPedido = 0
+    useEffect(() => {
+        calcularPedido()
+    }, [carrinho])
 
     const handleEsvaziarCarrinho = () => {
         setCarrinho([])
+        calcularPedido()
     }
 
     const calcularPedido = () => {
-        carrinho.map(({preco, quantidade})=> {
-            return (
-                totalPedido += (preco*quantidade) 
-            )
-        })
+        if (carrinho.length > 0){
+            carrinho.reduce(({preco, quantidade})=> {
+                return (
+                    setTotalPedido(totalPedido+(preco*quantidade))
+                )
+            })
+        }
     }
 
     const handleSalvarPedido = () => {
@@ -37,6 +43,7 @@ const Carrinho = () =>{
         })
     }
 
+    
     return (
         <>
             <NavBar />
@@ -50,6 +57,8 @@ const Carrinho = () =>{
                     />
                 )
             )}
+            <h4>Total do pedido</h4>
+            <p>R$ {totalPedido}</p>
             <br />
             <button onClick={handleEsvaziarCarrinho}>Esvaziar o carrinho</button>
             <button onClick={handleSalvarPedido}>COMPRAR</button>
