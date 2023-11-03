@@ -14,7 +14,7 @@ const CardProduto = ({ nome, preco, imgurl,id }) => {
           <Card.Img variant="top" src={imgurl} />
           <Card.Body style={{ backgroundColor: 'silver' }}>
             <Card.Title>{nome}</Card.Title>
-            <Card.Text style={{ color: 'black' }}>{preco}</Card.Text>
+            <Card.Text style={{ color: 'black' }}>R$ {preco}</Card.Text>
           </Card.Body>
         </Card>  
       </Link>

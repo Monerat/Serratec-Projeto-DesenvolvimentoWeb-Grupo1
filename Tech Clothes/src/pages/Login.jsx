@@ -5,26 +5,24 @@ import { api } from "../api/api"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from "react-router-dom";
-
+import { Context } from "../context/Context"
 
 const Login = () => {
   const [usuario, setUsuario] = useState([])
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  const {setUsuarios} = useContext(Context)
+
   const getUser = async () => {
-    setIsLoading(true);
-    const response = await api.get("/users", {
-      params: {
-        "email": email,
-        "senha": senha
-      }
-    });
+    const response = await api.get("/users");
     setUsuario(response.data);
-    setIsLoading(false);
-  };
+  }
+
+  useEffect(() => {
+    getUser()
+}, [])
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -35,20 +33,18 @@ const Login = () => {
   };
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    await getUser();
-    handleAuth();
+    e.preventDefault()
+    setUsuario(usuario.filter((user) => user.email == email && user.senha == senha))
+    handleAuth()
   };
 
   const handleAuth = () => {
-    if(!isLoading){
-      if (usuario[0] === undefined) {
-        alert("usuario ou senha inválidos");
-      } else {
-        navigate("/produtos");
-      }
+    if (usuario[0] === undefined) {
+      alert("usuario ou senha inválidos");
+    } else {
+      setUsuarios(usuario[0])
+      navigate("/produtos")
     }
-    else handleAuth()
   };
 
   return (
