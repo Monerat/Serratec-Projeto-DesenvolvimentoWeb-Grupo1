@@ -21,7 +21,7 @@ const Login = () => {
     setSenha(e.target.value)
   }
 
-  const handleListaUsuarios = (e) => {
+  const handleListaUsuarios = (e) => {    //vou aproveitar esse método para cadastro.
     e.preventDefault ()
     setListaUsuarios([...listaUsuarios, {email,senha}])
     alert('Usuário logado!')
