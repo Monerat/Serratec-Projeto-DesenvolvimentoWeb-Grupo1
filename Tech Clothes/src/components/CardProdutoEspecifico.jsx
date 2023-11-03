@@ -5,9 +5,9 @@ import { useContext, useEffect, useState } from "react"
 
 const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,estoque,getProdutos }) => {
     const {carrinho, setCarrinho, usuarios, setUsuarios} = useContext(Context)
-    const [quantidade, setQuantidade] = useState()
+    const [quantidade, setQuantidade] = useState(1)
 
-    const [quantidadex, setQuantidadex] = useState(10);
+    
 
   const handleAddCarrinho = () => {
     const produto={nome,preco,imgurl,quantidadex};
@@ -23,19 +23,19 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,esto
     }   
 
     const handleQuantidadeAumentar = () => {
-        if(quantidadex < estoque){
-       setQuantidadex(quantidadex + 1)
-        console.log(quantidadex);
+        if(quantidade < estoque){
+       setQuantidade(quantidade + 1)
+        console.log(quantidade);
         }else{
-            setQuantidadex(1)
+            setQuantidade(1)
         }
     }
 
     const handleQuantidadeDiminuir = () =>{
-      if(quantidadex != 1){
-      setQuantidadex(quantidadex - 1)
+      if(quantidade != 1){
+      setQuantidade(quantidade - 1)
       }else{
-        setQuantidadex(estoque)
+        setQuantidade(estoque)
       }
     }
     
@@ -55,7 +55,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,esto
           <h4>Disponíveis {estoque} Unidades</h4>
           <br/>
           <div>
-            <button onClick={handleQuantidadeDiminuir}>-</button>  {quantidadex}  <button onClick={handleQuantidadeAumentar}>+</button>
+            <button onClick={handleQuantidadeDiminuir}>-</button>  {quantidade}  <button onClick={handleQuantidadeAumentar}>+</button>
           </div>
           
           <br />
