@@ -16,10 +16,10 @@ const NavBar = () => {
           Historico de pedidos
         </Link>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <img src="https://as1.ftcdn.net/v2/jpg/02/14/45/30/1000_F_214453061_qMpms4YnswzZgb1VuGn4voobIaQVbhuI.jpg" alt="Tech Clothes" style={{ width: '200px' }} />
+          <img src="https://i.ibb.co/ZG1Nm6f/00055.png" alt="Tech Clothes" style={{ width: '200px' }} />
         </Link>
         <Link to="/carrinho" style={{ textDecoration: 'none' }}>
-          <img src="https://i.imgur.com/HpqDXbm.png" alt="carrinho" style={{ width: '100px' }} />
+          <img src="https://www.svgrepo.com/show/477419/shopping-cart-14.svg" alt="carrinho" style={{ width: '100px' }} />
         </Link>
       </Container>
     </Navbar>
