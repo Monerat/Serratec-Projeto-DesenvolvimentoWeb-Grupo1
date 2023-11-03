@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { api } from "../api/api"
 
-const CardItem = ({idProduto, quantidade}) => {
+const CardItem = ({ idProduto, quantidade }) => {
     const [produto, setProduto] = useState([])
     var subTotal = 0
 
@@ -14,14 +14,14 @@ const CardItem = ({idProduto, quantidade}) => {
         getProduto()
     }, [])
 
-    const calcularSubTotal = () =>{
-        subTotal = produto.preco*quantidade
+    const calcularSubTotal = () => {
+        subTotal = produto.preco * quantidade
     }
 
     return (
         <div>
             <>{calcularSubTotal()}</>
-            <img src={produto.imgurl}/>
+            <img src={produto.imgurl} />
             <p>{produto.nome}</p>
             <p>Quantidade de produtos: {quantidade}</p>
             <p>Subtotal: R$ {subTotal}</p>

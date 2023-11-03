@@ -12,7 +12,7 @@ const Login = () => {
   const [senha, setSenha] = useState('')
   const navigate = useNavigate();
 
-  const {usuario, setUsuario} = useContext(Context)
+  const { usuario, setUsuario } = useContext(Context)
 
   const getUser = async () => {
     const response = await api.get("/users");
@@ -21,7 +21,7 @@ const Login = () => {
 
   useEffect(() => {
     getUser()
-}, [])
+  }, [])
 
   const handleEmail = (event) => {
     setEmail(event.target.value);

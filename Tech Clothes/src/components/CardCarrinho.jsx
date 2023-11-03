@@ -1,7 +1,7 @@
-const CardCarrinho = ({imgurl, nome, quantidade, preco }) => {
+const CardCarrinho = ({ imgurl, nome, quantidade, preco }) => {
     return (
         <div>
-            <img src={imgurl}/>
+            <img src={imgurl} />
             <p>{nome}</p>
             <p>Quantidade: {quantidade}</p>
             <p>Preço unitario = R$ {preco}</p>

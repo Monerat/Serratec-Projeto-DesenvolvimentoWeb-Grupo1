@@ -3,11 +3,11 @@ import { useContext, useEffect, useState } from "react"
 import NavBar from "../components/Navbar"
 import CardCarrinho from "../components/CardCarrinho"
 
-const Carrinho = () =>{
-    const {carrinho, setCarrinho, usuario, setUsuario} = useContext(Context)
+const Carrinho = () => {
+    const { carrinho, setCarrinho, usuario, setUsuario } = useContext(Context)
     const [pedido, setPedido] = useState({})
     const [totalPedido, setTotalPedido] = useState(0.0)
-    
+
     useEffect(() => {
         calcularPedido()
     }, [carrinho])
@@ -18,10 +18,10 @@ const Carrinho = () =>{
     }
 
     const calcularPedido = () => {
-        if (carrinho.length > 0){
-            carrinho.reduce(({preco, quantidade})=> {
+        if (carrinho.length > 0) {
+            carrinho.reduce(({ preco, quantidade }) => {
                 return (
-                    setTotalPedido(totalPedido+(preco*quantidade))
+                    setTotalPedido(totalPedido + (preco * quantidade))
                 )
             })
         }
@@ -31,7 +31,7 @@ const Carrinho = () =>{
         setPedido({
             "valorTotal": valorTotal,
             "idUser": usuario.id,
-            "itens": [carrinho.map(({id, quantidade})=>{
+            "itens": [carrinho.map(({ id, quantidade }) => {
                 return (
                     {
                         "idProduto": id,
@@ -43,7 +43,7 @@ const Carrinho = () =>{
         })
     }
 
-    
+
     return (
         <>
             <NavBar />

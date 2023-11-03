@@ -3,8 +3,8 @@ import NavBar from "../components/Navbar"
 import { useEffect, useState } from "react"
 import CardPedido from "../components/CardPedido"
 
-const Pedidos = () =>{
-    const [pedidos , setPedidos] = useState([])
+const Pedidos = () => {
+    const [pedidos, setPedidos] = useState([])
 
     const getPedidos = async () => {
         const response = await api.get('/pedidos')
@@ -18,21 +18,21 @@ const Pedidos = () =>{
     }, [])
 
     return (
-    <>
-        <NavBar />
-        
-        {pedidos.map(
-            ({ id, valorTotal, idUser, itens}) => (
-                <CardPedido
-                    id={id}
-                    valorTotal = {valorTotal}
-                    idUser = {idUser}
-                    itens = {itens}
-                />
-            )
-        )}
-    </>
+        <>
+            <NavBar />
+
+            {pedidos.map(
+                ({ id, valorTotal, idUser, itens }) => (
+                    <CardPedido
+                        id={id}
+                        valorTotal={valorTotal}
+                        idUser={idUser}
+                        itens={itens}
+                    />
+                )
+            )}
+        </>
     )
-} 
+}
 
 export default Pedidos
