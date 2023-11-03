@@ -30,11 +30,34 @@ const Produtos = () => {
     return (
         <>
         <NavBar />
-        <br />
-        <form onSubmit={handlePesquisar}>
-            <input value={pesquisa} onChange={handleVarPesq}/>
-            <button type="submit">Pesquisar</button>
-        </form>
+        
+<form onSubmit={handlePesquisar} style={{ textAlign: 'right', backgroundColor: 'blue', padding: '10px' }}>
+  <input
+    value={pesquisa}
+    onChange={handleVarPesq}
+    style={{
+      padding: '5px',
+      borderRadius: '5px',
+      border: 'none',
+      marginRight: '5px',
+      width: '150px', // Defina a largura do campo de pesquisa conforme necessário
+    }}
+  />
+  <button
+    type="submit"
+    style={{
+      backgroundColor: 'white',
+      color: 'blue',
+      padding: '5px 10px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+    }}
+  >
+    Pesquisar
+  </button>
+</form>
 
         {produtos.map(
             ({  nome, preco, id, imgurl}) => (
