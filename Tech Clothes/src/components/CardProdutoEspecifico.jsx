@@ -7,15 +7,10 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   const { carrinho, setCarrinho, usuarios, setUsuarios } = useContext(Context)
   const [quantidade, setQuantidade] = useState(1)
 
-
-
   const handleAddCarrinho = () => {
     const produto = { nome, preco, imgurl, quantidade };
-
     setCarrinho([...carrinho, produto])
-
   }
-
 
   const handleLike = () => {
     api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 })
@@ -25,7 +20,6 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   const handleQuantidadeAumentar = () => {
     if (quantidade < estoque) {
       setQuantidade(quantidade + 1)
-      console.log(quantidade);
     } else {
       setQuantidade(1)
     }

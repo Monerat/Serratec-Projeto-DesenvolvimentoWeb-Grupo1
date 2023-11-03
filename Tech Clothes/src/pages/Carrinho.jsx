@@ -9,23 +9,19 @@ const Carrinho = () => {
     const [totalPedido, setTotalPedido] = useState(0.0)
 
     useEffect(() => {
-        calcularPedido()
+        setTotalPedido(calcularPedido())
     }, [carrinho])
 
     const handleEsvaziarCarrinho = () => {
         setCarrinho([])
-        calcularPedido()
+        setTotalPedido(calcularPedido())
     }
 
     const calcularPedido = () => {
-        if (carrinho.length > 0) {
-            carrinho.reduce(({ preco, quantidade }) => {
-                return (
-                    setTotalPedido(totalPedido + (preco * quantidade))
-                )
-            })
-        }
-    }
+        return carrinho.reduce((total, item) => {
+            return total + (item.preco * item.quantidade);
+        }, 0);
+    };
 
     const handleSalvarPedido = () => {
         setPedido({
