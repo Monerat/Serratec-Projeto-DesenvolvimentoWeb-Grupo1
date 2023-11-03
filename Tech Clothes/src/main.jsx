@@ -11,10 +11,11 @@ import Produtos from './pages/Produtos.jsx';
 import Login from './pages/Login.jsx';
 import Carrinho from './pages/Carrinho.jsx';
 import ProdutoEspecifico from './pages/ProdutoEspecifico.jsx'
+import Pedidos from './pages/Pedidos.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/login", //login
+    path: "/", //login
     element: <Login />
   },
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pedidos", //Historico de Pedidos
-    element: <div>Historico de Pedidos</div>
+    element: <Pedidos />
   }
 ]);
 

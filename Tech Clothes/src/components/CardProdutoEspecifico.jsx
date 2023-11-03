@@ -7,7 +7,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl,id,descricao,favoritos,quan
     const handleLike = () => {
         api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 })
         getProdutos()
-      }   
+    }   
 
     const handleQuantidade = () => {
         if(quantidade < quantidade){

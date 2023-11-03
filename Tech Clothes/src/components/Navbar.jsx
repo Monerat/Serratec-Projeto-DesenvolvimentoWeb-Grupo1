@@ -12,6 +12,9 @@ const NavBar = () => {
         <Link to="/produtos" style={{ color: 'white', textDecoration: 'none', fontSize: '35px', marginRight: '1px', fontWeight: 'bold' }}>
           TECH CLOTHES SHARK
         </Link>
+        <Link to="/pedidos" style={{ color: 'white', textDecoration: 'none', fontSize: '35px', marginRight: '1px', fontWeight: 'bold' }}>
+          Historico de pedidos
+        </Link>
         <Link to="/" style={{ textDecoration: 'none' }}>
           <img src="https://as1.ftcdn.net/v2/jpg/02/14/45/30/1000_F_214453061_qMpms4YnswzZgb1VuGn4voobIaQVbhuI.jpg" alt="Tech Clothes" style={{ width: '200px' }} />
         </Link>
