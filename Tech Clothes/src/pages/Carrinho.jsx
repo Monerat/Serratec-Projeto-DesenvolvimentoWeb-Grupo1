@@ -1,18 +1,40 @@
 import { Context } from "../context/Context"
 import { useContext, useEffect, useState } from "react"
-
 import NavBar from "../components/Navbar"
 import CardCarrinho from "../components/CardCarrinho"
 
 const Carrinho = () =>{
-    const {carrinho, setCarrinho, usuarios, setUsuarios} = useContext(Context)
+    const {carrinho, setCarrinho, usuario, setUsuario} = useContext(Context)
+    const [pedido, setPedido] = useState({})
     
+    var totalPedido = 0
+
     const handleEsvaziarCarrinho = () => {
-        setCarrinho('')
+        setCarrinho([])
+    }
+
+    const calcularPedido = () => {
+        carrinho.map(({preco, quantidade})=> {
+            return (
+                totalPedido += (preco*quantidade) 
+            )
+        })
     }
 
     const handleSalvarPedido = () => {
-        
+        setPedido({
+            "valorTotal": valorTotal,
+            "idUser": usuario.id,
+            "itens": [carrinho.map(({id, quantidade})=>{
+                return (
+                    {
+                        "idProduto": id,
+                        "quantidade": quantidade
+                    }
+                )
+            })
+            ]
+        })
     }
 
     return (

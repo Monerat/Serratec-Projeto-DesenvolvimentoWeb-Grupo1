@@ -1,6 +1,6 @@
 
 import NavBar from "../components/Navbar"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { api } from "../api/api"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,12 +8,11 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../context/Context"
 
 const Login = () => {
-  const [usuario, setUsuario] = useState([])
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const navigate = useNavigate();
 
-  const {setUsuarios} = useContext(Context)
+  const {usuario, setUsuario} = useContext(Context)
 
   const getUser = async () => {
     const response = await api.get("/users");
@@ -42,7 +41,6 @@ const Login = () => {
     if (usuario[0] === undefined) {
       alert("usuario ou senha inválidos");
     } else {
-      setUsuarios(usuario[0])
       navigate("/produtos")
     }
   };

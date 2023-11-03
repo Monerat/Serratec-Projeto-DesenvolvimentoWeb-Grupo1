@@ -21,58 +21,49 @@
   ],
   "produtos": [
     {
-      "id": 1,
-      "nome": "Mouse com fio Logitech",
-      "preco": 29.99,
-      "estoque": 37,
-      "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
-      "imgurl": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": 56
-    },
-    {
       "nome": "mascara de mergulho",
       "preco": 299.99,
-      "quantidade": 15,
+      "estoque": 15,
       "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imgurl": "https://m.media-amazon.com/images/I/61WifZ2Ye3S.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": 0,
-      "id": 2
+      "id": 1
     },
     {
       "nome": "roupa de mergulho",
       "preco": 599.99,
-      "quantidade": 15,
+      "estoque": 15,
       "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imgurl": "https://m.media-amazon.com/images/I/51mK8Or7nNL._AC_SL1500_.jpg",
       "favoritos": 0,
-      "id": 3
+      "id": 2
     },
     {
       "nome": "tanque de oxigenio",
       "preco": 2353.99,
-      "quantidade": 15,
+      "estoque": 15,
       "descricao": "Mini tanque de mergulho de 1L, cilindro de oxigênio recarregável portátil com equipamento de mergulho subaquático de 15 a 20 minutos, kit de tanque de mergulho reutilizável",
       "imgurl": "https://m.media-amazon.com/images/I/51P0IFiABTL._AC_SL1001_.jpg",
       "favoritos": 0,
-      "id": 4
+      "id": 3
     },
     {
       "nome": "nadadeira",
       "preco": 153.99,
-      "quantidade": 15,
+      "estoque": 15,
       "descricao": "Nadadeira natação A Nadadeira natação da marca Leader é conhecida internacionalmente há mais de 30 anos, e tem  produtos esportivos de alta qualidade, design, moderno  e alta  durabilidade. Nadadeira Leader é Feita em silicone e é ideal para qualquer tipo de nadador, do iniciante  ao profissional, e para qualquer tipo de treino, seja na piscina ou em águas abertas. O  silicone oferece uma  uma ótima durabilidade e flexibilidade na medida certa, e por isso não provocam cãimbras",
       "imgurl": "https://m.media-amazon.com/images/I/518rRWocLPL._AC_SL1200_.jpg",
       "favoritos": 0,
-      "id": 5
+      "id": 4
     },
     {
       "nome": "nadareira leader",
       "preco": 253.99,
-      "quantidade": 15,
+      "estoque": 15,
       "descricao": "Nadadeira natação A Nadadeira natação da marca Leader é conhecida internacionalmente há mais de 30 anos, e tem  produtos esportivos de alta qualidade, design, moderno  e alta  durabilidade. Nadadeira Leader é Feita em silicone e é ideal para qualquer tipo de nadador, do iniciante  ao profissional, e para qualquer tipo de treino, seja na piscina ou em águas abertas. O  silicone oferece uma  uma ótima durabilidade e flexibilidade na medida certa, e por isso não provocam cãimbras",
       "imgurl": "https://m.media-amazon.com/images/I/51SURxd6byL._AC_SL1200_.jpg",
       "favoritos": 0,
-      "id": 6
+      "id": 5
     }
   ],
   "pedidos": [
