@@ -77,36 +77,6 @@
           "quantidade": 10
         }
       ]
-    },
-    {
-      "valorTotal": 599.98,
-      "idUser": 1,
-      "itens": [
-        [
-          {
-            "quantidade": 1
-          },
-          {
-            "quantidade": 1
-          }
-        ]
-      ],
-      "id": 2
-    },
-    {
-      "valorTotal": 599.98,
-      "idUser": 1,
-      "itens": [
-        [
-          {
-            "quantidade": 1
-          },
-          {
-            "quantidade": 1
-          }
-        ]
-      ],
-      "id": 3
     }
   ]
 }

@@ -6,11 +6,25 @@ import { api } from "../api/api"
 
 const Carrinho = () => {
     const { carrinho, setCarrinho, usuario, setUsuario } = useContext(Context)
-    const [pedido, setPedido] = useState({})
     const [totalPedido, setTotalPedido] = useState(0.0)
 
     const setSalvarPedido = async () => {
+        
         try {
+            let pedido = 
+            {
+                valorTotal: totalPedido,
+                idUser: usuario[0].id,
+                itens: carrinho.map(({ id, quantidade }) => {
+                    return{
+                            idProduto: id,
+                            quantidade: quantidade
+                    }
+    
+                })
+            }
+            console.log(pedido)
+            console.log(carrinho)
             const response = await api.post('/pedidos', pedido)
 
             console.log("pedido salvo no id: " + response.data.id)
@@ -35,23 +49,8 @@ const Carrinho = () => {
     }
 
     const handleSalvarPedido = () => {
-        handlePedido()
         setSalvarPedido()
-    }
-
-    const handlePedido = () => {
-        setPedido({
-            "valorTotal": totalPedido,
-            "idUser": usuario[0].id,
-            "itens": carrinho.map(({ id, quantidade }) => {
-                return (
-                    {
-                        "idProduto": id,
-                        "quantidade": quantidade
-                    }
-                )
-            })
-        })
+        //setEstoqueNovo() utilizar .patch
     }
 
     return (

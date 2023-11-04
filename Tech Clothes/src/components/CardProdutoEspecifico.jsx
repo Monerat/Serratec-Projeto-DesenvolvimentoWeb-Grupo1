@@ -8,7 +8,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   const [quantidade, setQuantidade] = useState(1)
 
   const handleAddCarrinho = () => {
-    const produto = { nome, preco, imgurl, quantidade };
+    const produto = { id, nome, preco, imgurl, quantidade };
     setCarrinho([...carrinho, produto])
   }
 
