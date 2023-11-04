@@ -10,7 +10,7 @@ const CardProduto = ({ nome, preco, imgurl, id }) => {
       <Link style={{ textDecoration: 'none' }} to={`/produtos/${id}`}>
         <Card style={{ width: '30rem', heigh: 'auto', borderWidth: '3px', borderColor: '#18569cb8', borderStyle: 'solid' }}>
           <Ratio aspectRatio="1x1">
-            <Card.Img variant="top" src={imgurl} />
+            <Card.Img style={{objectFit: 'contain'}} variant="top" src={imgurl} />
           </Ratio>
           <Card.Body style={{ backgroundColor: 'silver' }}>
             <Card.Title style={{ color: 'black' , fontSize: '30px' }}>{nome}</Card.Title>

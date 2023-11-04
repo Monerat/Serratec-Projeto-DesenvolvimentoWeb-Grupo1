@@ -27,7 +27,7 @@ const CardItem = ({ idProduto, quantidade }) => {
                 
                 <Card.Body className="d-flex flex-row justify-content-between">
                     <div style={{margin: '30px'}}>
-                        <Card.Img variant="top" src={produto.imgurl} style={{ width: '100%' }} />
+                        <Card.Img variant="top" src={produto.imgurl} style={{ width: '100%', objectFit: 'contain' }} />
                     </div>
                     <div >
                         <Card.Title>{produto.nome}</Card.Title>
