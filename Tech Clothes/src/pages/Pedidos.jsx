@@ -3,6 +3,8 @@ import NavBar from "../components/Navbar"
 import { useEffect, useState, useContext } from "react"
 import CardPedido from "../components/CardPedido"
 import { Context } from "../context/Context"
+import Card from 'react-bootstrap/Card';
+import CardItem from "../components/CardItem"
 
 const Pedidos = () => {
     const [pedidos, setPedidos] = useState([])
@@ -21,7 +23,7 @@ const Pedidos = () => {
     return (
         <>
             <NavBar />
-
+            
             {pedidos.map(
                 ({ id, valorTotal, idUser, itens }) => (
                     <CardPedido
