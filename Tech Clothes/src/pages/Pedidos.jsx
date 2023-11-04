@@ -1,16 +1,17 @@
 import { api } from "../api/api"
 import NavBar from "../components/Navbar"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import CardPedido from "../components/CardPedido"
+import { Context } from "../context/Context"
 
 const Pedidos = () => {
     const [pedidos, setPedidos] = useState([])
+    const { usuario } = useContext(Context)
 
     const getPedidos = async () => {
         const response = await api.get('/pedidos')
-        //quando o context do usuario estiver pronto, filtrar os pedidos pelo id do usuario logado.
-        setPedidos(response.data)
-
+        const pedidosFiltrados = response.data.filter((pedido) => pedido.idUser === usuario[0].id)
+        setPedidos(pedidosFiltrados)
     }
 
     useEffect(() => {

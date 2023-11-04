@@ -2,11 +2,22 @@ import { Context } from "../context/Context"
 import { useContext, useEffect, useState } from "react"
 import NavBar from "../components/Navbar"
 import CardCarrinho from "../components/CardCarrinho"
+import { api } from "../api/api"
 
 const Carrinho = () => {
     const { carrinho, setCarrinho, usuario, setUsuario } = useContext(Context)
     const [pedido, setPedido] = useState({})
     const [totalPedido, setTotalPedido] = useState(0.0)
+
+    const setSalvarPedido = async () => {
+        try {
+            const response = await api.post('/pedidos', pedido)
+
+            console.log("pedido salvo no id: " + response.data.id)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
 
     useEffect(() => {
         setTotalPedido(calcularPedido())
@@ -19,15 +30,20 @@ const Carrinho = () => {
 
     const calcularPedido = () => {
         return carrinho.reduce((total, item) => {
-            return total + (item.preco * item.quantidade);
-        }, 0);
-    };
+            return total + (item.preco * item.quantidade)
+        }, 0)
+    }
 
     const handleSalvarPedido = () => {
+        handlePedido()
+        setSalvarPedido()
+    }
+
+    const handlePedido = () => {
         setPedido({
-            "valorTotal": valorTotal,
-            "idUser": usuario.id,
-            "itens": [carrinho.map(({ id, quantidade }) => {
+            "valorTotal": totalPedido,
+            "idUser": usuario[0].id,
+            "itens": carrinho.map(({ id, quantidade }) => {
                 return (
                     {
                         "idProduto": id,
@@ -35,10 +51,8 @@ const Carrinho = () => {
                     }
                 )
             })
-            ]
         })
     }
-
 
     return (
         <>

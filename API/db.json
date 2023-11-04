@@ -64,6 +64,21 @@
       "imgurl": "https://m.media-amazon.com/images/I/51SURxd6byL._AC_SL1200_.jpg",
       "favoritos": 0,
       "id": 5
+    },
+    {
+      "valorTotal": 599.98,
+      "idUser": 1,
+      "itens": [
+        [
+          {
+            "quantidade": 1
+          },
+          {
+            "quantidade": 1
+          }
+        ]
+      ],
+      "id": 6
     }
   ],
   "pedidos": [
@@ -77,6 +92,36 @@
           "quantidade": 10
         }
       ]
+    },
+    {
+      "valorTotal": 599.98,
+      "idUser": 1,
+      "itens": [
+        [
+          {
+            "quantidade": 1
+          },
+          {
+            "quantidade": 1
+          }
+        ]
+      ],
+      "id": 2
+    },
+    {
+      "valorTotal": 599.98,
+      "idUser": 1,
+      "itens": [
+        [
+          {
+            "quantidade": 1
+          },
+          {
+            "quantidade": 1
+          }
+        ]
+      ],
+      "id": 3
     }
   ]
 }
