@@ -30,7 +30,7 @@
       "id": 1,
       "nome": "Máscara de Mergulho",
       "preco": 299.99,
-      "estoque": 14,
+      "estoque": 13,
       "descricao": "Máscara de mergulho com design ergonômico.",
       "imgurl": "https://m.media-amazon.com/images/I/61WifZ2Ye3S.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": 1
@@ -139,6 +139,17 @@
         }
       ],
       "id": 5
+    },
+    {
+      "valorTotal": 299.99,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 1
+        }
+      ],
+      "id": 6
     }
   ]
 }
