@@ -3,73 +3,73 @@
     {
       "id": 1,
       "nome": "Raphael da Rocha Pinto Barboza",
-      "email": "Raphael da Rocha Pinto",
+      "email": "raphaeldarochapintobarboza@gmail.com",
       "senha": "123456"
     },
     {
+      "id": 2,
       "nome": "alex",
       "email": "alex@gmail.com",
-      "senha": "123456",
-      "id": 2
+      "senha": "123456"
     },
     {
+      "id": 3,
       "nome": "monerat",
       "email": "monerat@gmail.com",
-      "senha": "123456",
-      "id": 3
+      "senha": "123456"
     },
     {
+      "id": 4,
       "nome": "alex",
       "email": "alex@gmail.com",
-      "senha": "123456",
-      "id": 4
+      "senha": "123456"
     }
   ],
   "produtos": [
     {
-      "nome": "mascara de mergulho",
+      "id": 1,
+      "nome": "Máscara de Mergulho",
       "preco": 299.99,
       "estoque": 15,
-      "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+      "descricao": "Máscara de mergulho com design ergonômico.",
       "imgurl": "https://m.media-amazon.com/images/I/61WifZ2Ye3S.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": 0,
-      "id": 1
+      "favoritos": 1
     },
     {
-      "nome": "roupa de mergulho",
+      "id": 2,
+      "nome": "Roupa de Mergulho",
       "preco": 599.99,
       "estoque": 15,
-      "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+      "descricao": "Roupa de mergulho resistente e confortável.",
       "imgurl": "https://m.media-amazon.com/images/I/51mK8Or7nNL._AC_SL1500_.jpg",
-      "favoritos": 0,
-      "id": 2
+      "favoritos": 7
     },
     {
-      "nome": "tanque de oxigenio",
+      "id": 3,
+      "nome": "Tanque de Oxigênio",
       "preco": 2353.99,
       "estoque": 15,
-      "descricao": "Mini tanque de mergulho de 1L, cilindro de oxigênio recarregável portátil com equipamento de mergulho subaquático de 15 a 20 minutos, kit de tanque de mergulho reutilizável",
+      "descricao": "Mini tanque de mergulho recarregável.",
       "imgurl": "https://m.media-amazon.com/images/I/51P0IFiABTL._AC_SL1001_.jpg",
-      "favoritos": 0,
-      "id": 3
+      "favoritos": 6
     },
     {
-      "nome": "nadadeira",
+      "id": 4,
+      "nome": "Nadadeira",
       "preco": 153.99,
       "estoque": 15,
-      "descricao": "Nadadeira natação A Nadadeira natação da marca Leader é conhecida internacionalmente há mais de 30 anos, e tem  produtos esportivos de alta qualidade, design, moderno  e alta  durabilidade. Nadadeira Leader é Feita em silicone e é ideal para qualquer tipo de nadador, do iniciante  ao profissional, e para qualquer tipo de treino, seja na piscina ou em águas abertas. O  silicone oferece uma  uma ótima durabilidade e flexibilidade na medida certa, e por isso não provocam cãimbras",
+      "descricao": "Nadadeira de alta qualidade para natação.",
       "imgurl": "https://m.media-amazon.com/images/I/518rRWocLPL._AC_SL1200_.jpg",
-      "favoritos": 0,
-      "id": 4
+      "favoritos": 1
     },
     {
-      "nome": "nadareira leader",
+      "id": 5,
+      "nome": "Nadadeira Leader",
       "preco": 253.99,
       "estoque": 15,
-      "descricao": "Nadadeira natação A Nadadeira natação da marca Leader é conhecida internacionalmente há mais de 30 anos, e tem  produtos esportivos de alta qualidade, design, moderno  e alta  durabilidade. Nadadeira Leader é Feita em silicone e é ideal para qualquer tipo de nadador, do iniciante  ao profissional, e para qualquer tipo de treino, seja na piscina ou em águas abertas. O  silicone oferece uma  uma ótima durabilidade e flexibilidade na medida certa, e por isso não provocam cãimbras",
+      "descricao": "Nadadeira de alta qualidade para natação.",
       "imgurl": "https://m.media-amazon.com/images/I/51SURxd6byL._AC_SL1200_.jpg",
-      "favoritos": 0,
-      "id": 5
+      "favoritos": 9
     }
   ],
   "pedidos": [
@@ -85,6 +85,7 @@
       ]
     },
     {
+      "id": 2,
       "valorTotal": 599.9,
       "idUser": 1,
       "itens": [
@@ -92,40 +93,39 @@
           "idProduto": 2,
           "quantidade": 1
         }
-      ],
-      "id": 2
+      ]
     },
     {
-      "id": 3
+      "id": 3,
+      "valorTotal": 100,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 2
+        },
+        {
+          "idProduto": 3,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 4,
+          "quantidade": 4
+        }
+      ]
     },
     {
       "id": 4
     },
     {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
       "id": 5
     },
     {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
+      "valorTotal": 2653.9799999999996,
+      "idUser": 2,
       "itens": [
         {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
+          "quantidade": 1
         },
         {
           "quantidade": 1
@@ -134,14 +134,11 @@
       "id": 6
     },
     {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
+      "valorTotal": 2653.9799999999996,
+      "idUser": 2,
       "itens": [
         {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
+          "quantidade": 1
         },
         {
           "quantidade": 1
@@ -150,132 +147,7 @@
       "id": 7
     },
     {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
       "id": 8
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 9
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 10
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 11
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 12
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 13
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 14
-    },
-    {
-      "valorTotal": 3715.9399999999996,
-      "idUser": 1,
-      "itens": [
-        {
-          "quantidade": 3
-        },
-        {
-          "quantidade": 2
-        },
-        {
-          "quantidade": 1
-        }
-      ],
-      "id": 15
     }
   ]
 }
