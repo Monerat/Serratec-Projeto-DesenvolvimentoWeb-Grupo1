@@ -85,6 +85,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "valorTotal": 1499.96,
       "idUser": 3,
       "itens": [
@@ -96,10 +97,24 @@
           "idProduto": 2,
           "quantidade": 1
         }
+=======
+      "valorTotal": 599.98,
+      "idUser": 1,
+      "itens": [
+        [
+          {
+            "quantidade": 1
+          },
+          {
+            "quantidade": 1
+          }
+        ]
+>>>>>>> andre/login/addstyle
       ],
       "id": 2
     },
     {
+<<<<<<< HEAD
       "valorTotal": 1199.96,
       "idUser": 3,
       "itens": [
@@ -150,6 +165,21 @@
         }
       ],
       "id": 6
+=======
+      "valorTotal": 599.98,
+      "idUser": 1,
+      "itens": [
+        [
+          {
+            "quantidade": 1
+          },
+          {
+            "quantidade": 1
+          }
+        ]
+      ],
+      "id": 3
+>>>>>>> andre/login/addstyle
     }
   ]
 }
