@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import { api } from "../api/api"
-import { Context } from "../context/Context"
-import { useContext, useEffect, useState } from "react"
+import { api } from "../api/api";
+import { Context } from "../context/Context";
+import { useContext, useEffect, useState } from "react";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, estoque, getProdutos }) => {
-  const { carrinho, setCarrinho, usuarios, setUsuarios } = useContext(Context)
-  const [quantidade, setQuantidade] = useState(1)
+  const { carrinho, setCarrinho, usuarios, setUsuarios } = useContext(Context);
+  const [quantidade, setQuantidade] = useState(1);
 
   const handleAddCarrinho = () => {
     const produto = { id, nome, preco, imgurl, quantidade };
@@ -13,55 +15,50 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   }
 
   const handleLike = () => {
-    api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 })
-    getProdutos()
+    api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 });
+    getProdutos();
   }
 
   const handleQuantidadeAumentar = () => {
     if (quantidade < estoque) {
-      setQuantidade(quantidade + 1)
+      setQuantidade(quantidade + 1);
     } else {
-      setQuantidade(1)
+      setQuantidade(1);
     }
   }
 
   const handleQuantidadeDiminuir = () => {
-    if (quantidade != 1) {
-      setQuantidade(quantidade - 1)
+    if (quantidade !== 1) {
+      setQuantidade(quantidade - 1);
     } else {
-      setQuantidade(estoque)
+      setQuantidade(estoque);
     }
   }
 
   return (
-    <Link to={`/produtos/${id}`} >
-      <div style={{
-        display: 'flex', alignItems: 'center', border: '6px solid', borderRadius: '30px', marginTop: '10px', position: 'absolute', padding: '20px', top: '50%',
-        left: '50%', transform: 'translate(-50%, -50%)'
-      }}>
-        <img src={imgurl} alt={'imagem'} style={{ maxWidth: '100%' }} />
-        <div style={{ padding: '30px' }}>
-          <h1>{nome}</h1>
-          <button onClick={handleLike} >Gostei: {favoritos}</button>
-          <h3>Preço: R$ {preco}</h3>
-          <p>{descricao}</p>
-          <h4>Disponíveis {estoque} Unidades</h4>
-          <br />
-          <div>
-            <button onClick={handleQuantidadeDiminuir}>-</button>  {quantidade}  <button onClick={handleQuantidadeAumentar}>+</button>
-          </div>
-
-          <br />
-          <br />
-          <Link to="/carrinho">
-            <button onClick={handleAddCarrinho}>
-              Adicionar ao carrinho
-            </button>
-          </Link>
+    <Card style={{ width: '30rem', margin: '10px', marginLeft:'40%' , borderWidth: '3px', borderColor: '#18569cb8', borderStyle: 'solid' }}>
+      <Card.Img variant="top" src={imgurl} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '400px' }} />
+      <Card.Body>
+        <Card.Title>{nome}</Card.Title>
+        <Button variant="primary" onClick={handleLike}>Gostei: {favoritos}</Button>
+        <Card.Text>Preço: R$ {preco}</Card.Text>
+        <Card.Text>{descricao}</Card.Text>
+        <Card.Text>Disponíveis {estoque} Unidades</Card.Text>
+        <br />
+        <div className="d-flex align-items-center">
+          <Button variant="outline-primary" onClick={handleQuantidadeDiminuir}>-</Button>
+          <span className="mx-2">{quantidade}</span>
+          <Button variant="outline-primary" onClick={handleQuantidadeAumentar}>+</Button>
         </div>
-      </div>
-    </Link>
-  )
+        <br />
+        <Link to="/carrinho">
+          <Button variant="success" onClick={handleAddCarrinho}>
+            Adicionar ao carrinho
+          </Button>
+        </Link>
+      </Card.Body>
+    </Card>
+  );
+};
 
-}
-export default CardProdutoEspecifico
+export default CardProdutoEspecifico;
