@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { api } from "../api/api";
 
 const Carrinho = () => {
-    const { carrinho, setCarrinho, usuario, setUsuario } = useContext(Context)
+    const { carrinho, setCarrinho, usuario, usuarioLogado } = useContext(Context)
     const [totalPedido, setTotalPedido] = useState(0.0)
 
     const setSalvarPedido = async () => {
@@ -48,11 +48,28 @@ const Carrinho = () => {
     }
 
     const handleSalvarPedido = () => {
-        setSalvarPedido()
-        //setEstoqueNovo() utilizar .patch
+        if(usuarioLogado){
+            setSalvarPedido()
+            setNewEstoque()
+            // handleEsvaziarCarrinho()
+        }else{
+            alert("Logue no site, antes de efetuar a compra.")            
+        }
+        
     }
 
+    const setNewEstoque = () => {
+        carrinho.map(({ id, quantidade, estoque }) => {
+            return(
+                atualizarEstoque(id, quantidade, estoque)
+            )
+        })
+    }
 
+    const atualizarEstoque = async (ID, qtd, estoque) => {
+        const response = await api.patch(`/produtos/${ID}`, { estoque: estoque - qtd })
+    }
+    
     return (
         <>
             <NavBar />

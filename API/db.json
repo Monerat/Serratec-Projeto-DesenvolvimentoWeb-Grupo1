@@ -30,7 +30,7 @@
       "id": 1,
       "nome": "Máscara de Mergulho",
       "preco": 299.99,
-      "estoque": 15,
+      "estoque": 14,
       "descricao": "Máscara de mergulho com design ergonômico.",
       "imgurl": "https://m.media-amazon.com/images/I/61WifZ2Ye3S.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": 1
@@ -39,7 +39,7 @@
       "id": 2,
       "nome": "Roupa de Mergulho",
       "preco": 599.99,
-      "estoque": 15,
+      "estoque": 14,
       "descricao": "Roupa de mergulho resistente e confortável.",
       "imgurl": "https://m.media-amazon.com/images/I/51mK8Or7nNL._AC_SL1500_.jpg",
       "favoritos": 7
@@ -98,6 +98,47 @@
         }
       ],
       "id": 2
+    },
+    {
+      "valorTotal": 1199.96,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 4
+        }
+      ],
+      "id": 3
+    },
+    {
+      "valorTotal": 3853.9399999999996,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 5
+        },
+        {
+          "idProduto": 3,
+          "quantidade": 1
+        }
+      ],
+      "id": 4
+    },
+    {
+      "valorTotal": 899.98,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 2,
+          "quantidade": 1
+        }
+      ],
+      "id": 5
     }
   ]
 }

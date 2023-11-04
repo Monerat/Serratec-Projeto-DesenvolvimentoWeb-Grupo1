@@ -10,9 +10,31 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   const [quantidade, setQuantidade] = useState(1);
 
   const handleAddCarrinho = () => {
-    const produto = { id, nome, preco, imgurl, quantidade };
-    setCarrinho([...carrinho, produto])
+    const produto = { id, nome, preco, imgurl, quantidade, estoque };
+    const produtoCarrinho = carrinho.find((prod) => prod.id === produto.id)
+
+    if (produtoCarrinho) {
+      const carrinhoNovo = carrinho.slice();
+
+      carrinhoNovo.map((prod) => {
+        if (prod.id === produto.id) {
+          if ((prod.quantidade + quantidade) <= produto.estoque) {
+            prod.quantidade = prod.quantidade + quantidade;
+          }
+          else{
+            prod.quantidade = produto.estoque
+          }
+        }
+        return prod
+      })
+      setCarrinho(carrinhoNovo)
+
+    } else {
+      setCarrinho([...carrinho, produto])
+    }
   }
+
+
 
   const handleLike = () => {
     api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 });
@@ -36,7 +58,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
   }
 
   return (
-    <Card style={{ width: '30rem', margin: '10px', marginLeft:'40%' , borderWidth: '3px', borderColor: '#18569cb8', borderStyle: 'solid' }}>
+    <Card style={{ width: '30rem', margin: '10px', marginLeft: '40%', borderWidth: '3px', borderColor: '#18569cb8', borderStyle: 'solid' }}>
       <Card.Img variant="top" src={imgurl} style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '400px' }} />
       <Card.Body>
         <Card.Title>{nome}</Card.Title>

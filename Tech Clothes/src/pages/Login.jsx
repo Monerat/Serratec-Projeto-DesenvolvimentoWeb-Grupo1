@@ -12,7 +12,7 @@ const Login = () => {
   const [senha, setSenha] = useState('')
   const navigate = useNavigate();
 
-  const { usuario, setUsuario } = useContext(Context)
+  const { usuario, setUsuario, usuarioLogado, setUsuarioLogado } = useContext(Context)
 
   const getUser = async () => {
     const response = await api.get("/users");
@@ -41,6 +41,7 @@ const Login = () => {
     if (usuario[0] === undefined) {
       alert("usuario ou senha inválidos");
     } else {
+      setUsuarioLogado(true)
       navigate("/produtos")
     }
   };
