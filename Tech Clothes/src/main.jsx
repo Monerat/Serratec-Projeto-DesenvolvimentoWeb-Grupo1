@@ -13,6 +13,7 @@ import Carrinho from './pages/Carrinho.jsx';
 import ProdutoEspecifico from './pages/ProdutoEspecifico.jsx'
 import Pedidos from './pages/Pedidos.jsx';
 import { Provider } from './context/Context.jsx';
+import Cadastrar from './pages/Cadastrar.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/pedidos", //Historico de Pedidos
     element: <Pedidos />
+  },
+  {
+    path: "/cadastrar", //Historico de Pedidos
+    element: <Cadastrar />
   }
 ]);
 

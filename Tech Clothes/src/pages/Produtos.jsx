@@ -21,7 +21,7 @@ const Produtos = () => {
 
     const handlePesquisar = (e) =>{
         e.preventDefault()
-        setProdutos(produtos.filter((produto) => produto.nome === pesquisa))
+        setProdutos(produtos.filter((produto) => produto.nome === pesquisa || produto.categoria === pesquisa))
     }
     const handleVarPesq = (event) =>{
         setPesquisa(event.target.value)

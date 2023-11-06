@@ -1,4 +1,3 @@
-
 import NavBar from "../components/Navbar"
 import { useState, useEffect, useContext } from "react"
 import { api } from "../api/api"
@@ -47,6 +46,10 @@ const Login = () => {
     }
   };
 
+  const handleCadastro = () => {
+    navigate("/cadastrar")
+  }
+
   return (
     <>
       <NavBar />
@@ -61,7 +64,7 @@ const Login = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <Form onSubmit={handleLogin}>
+        <Form onSubmit={handleLogin} onReset={handleCadastro}>
           <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
             <Form.Label>E-mail</Form.Label>
             <Form.Control onChange={handleEmail} type="email" placeholder="Informe seu Email" />
@@ -76,11 +79,11 @@ const Login = () => {
           </Form.Group>
 
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-            <Button variant="primary" type="submit" style={{ margin: '10px' }}>
-              Logar
+            <Button variant="success" type="reset" style={{ margin: '10px' }}>
+              Cadastrar
             </Button>
             <Button variant="primary" type="submit" style={{ margin: '10px' }}>
-              Cadastrar
+              Logar
             </Button>
           </div>
         </Form>
