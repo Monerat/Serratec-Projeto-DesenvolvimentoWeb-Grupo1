@@ -57,7 +57,7 @@ const Cadastrar = () => {
         <>
             <NavBar />
             <div style={{
-                backgroundImage: 'url("https://www.adventureclub.com.br/wp-content/uploads/2020/11/Background-apresentacao-18-min.png")',
+                backgroundImage: 'url("https://i.gifer.com/ibu.gif")',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
