@@ -81,6 +81,12 @@
           "quantidade": 10
         }
       ]
+    },
+    {
+      "valorTotal": "0.00",
+      "idUser": 2,
+      "itens": [],
+      "id": 2
     }
   ]
 }

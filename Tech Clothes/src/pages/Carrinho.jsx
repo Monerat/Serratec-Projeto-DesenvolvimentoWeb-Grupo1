@@ -10,18 +10,18 @@ const Carrinho = () => {
     const [totalPedido, setTotalPedido] = useState(0.0)
 
     const setSalvarPedido = async () => {
-        
+
         try {
-            let pedido = 
+            let pedido =
             {
                 valorTotal: totalPedido.toFixed(2),
                 idUser: usuario[0].id,
                 itens: carrinho.map(({ id, quantidade }) => {
-                    return{
-                            idProduto: id,
-                            quantidade: quantidade
+                    return {
+                        idProduto: id,
+                        quantidade: quantidade
                     }
-    
+
                 })
             }
 
@@ -46,22 +46,25 @@ const Carrinho = () => {
             return total + (item.preco * item.quantidade);
         }, 0);
     }
-
+    console.log(carrinho != "")
     const handleSalvarPedido = () => {
-        if(usuarioLogado && carrinho ==""){
-            setSalvarPedido()
-            setNewEstoque()
-            alert("Obrigado por comprar em nosso site!")
-            handleEsvaziarCarrinho()
-        }else{
-            alert("Logue no site, antes de efetuar a compra.")            
+        if (carrinho != "") {
+            if (usuarioLogado) {
+                setSalvarPedido()
+                setNewEstoque()
+                alert("Obrigado por comprar em nosso site!")
+                handleEsvaziarCarrinho()
+            } else {
+                alert("Logue no site, antes de efetuar a compra.")
+            }
+        } else {
+            alert("Adicione itens ao carrinho primeiro.")
         }
-        
     }
 
     const setNewEstoque = () => {
         carrinho.map(({ id, quantidade, estoque }) => {
-            return(
+            return (
                 atualizarEstoque(id, quantidade, estoque)
             )
         })
@@ -70,13 +73,13 @@ const Carrinho = () => {
     const atualizarEstoque = async (ID, qtd, estoque) => {
         const response = await api.patch(`/produtos/${ID}`, { estoque: estoque - qtd })
     }
-    
+
     return (
         <>
             <NavBar />
             <div className="container" >
                 <h2>Itens no Carrinho</h2>
-                <div style={{marginBottom: '30px', marginTop: '20px'}} className="row">
+                <div style={{ marginBottom: '30px', marginTop: '20px' }} className="row">
                     {carrinho.map(({ id, nome, quantidade, imgurl, preco }) => (
                         <div className="col-md-4" key={id}>
                             <Card className="my-3" style={{ width: '20rem', height: '100%', borderWidth: '3px', borderColor: '#18569cb8', borderStyle: 'solid' }} >

@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Login = () => {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState({})
   const navigate = useNavigate();
 
   const { usuario, setUsuario, usuarioLogado, setUsuarioLogado } = useContext(Context)
