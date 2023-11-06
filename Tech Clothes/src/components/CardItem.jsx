@@ -16,8 +16,8 @@ const CardItem = ({ idProduto, quantidade }) => {
     }, [idProduto]);
 
     const calcularSubTotal = () => {
-        subTotal = produto.preco * quantidade;
-        return subTotal.Math.ceil();
+        subTotal = produto.preco * quantidade
+        return subTotal.toFixed(2);
     }
 
     return (

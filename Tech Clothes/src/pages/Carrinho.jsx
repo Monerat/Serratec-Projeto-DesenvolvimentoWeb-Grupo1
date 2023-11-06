@@ -14,7 +14,7 @@ const Carrinho = () => {
         try {
             let pedido = 
             {
-                valorTotal: totalPedido.Math.ceil(),
+                valorTotal: totalPedido.toFixed(2),
                 idUser: usuario[0].id,
                 itens: carrinho.map(({ id, quantidade }) => {
                     return{
@@ -91,7 +91,7 @@ const Carrinho = () => {
                     ))}
                 </div>
                 <div className="text-center my-4">
-                    <h4>Total do pedido: R$ {totalPedido}</h4>
+                    <h4>Total do pedido: R$ {totalPedido.toFixed(2)}</h4>
                 </div>
                 <div className="text-center">
                     <Button variant="danger" onClick={handleEsvaziarCarrinho} className="m-2">Esvaziar Carrinho</Button>{' '}
