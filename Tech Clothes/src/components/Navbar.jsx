@@ -5,9 +5,13 @@ import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {
+  const navStyle = {
+    background: 'linear-gradient(to left, #141e30, #243b55)',
+    variant: 'dark',
+  };
 
   return (
-    <Navbar bg="primary" variant="dark">
+    <Navbar style={navStyle}>
       <Container className="d-flex justify-content-between align-items-center">
         <Link to="/produtos" style={{ textDecoration: 'none' }}>
           <img src="https://i.ibb.co/ZG1Nm6f/00055.png" alt="Tech Clothes" style={{ width: '200px' }} />
@@ -30,4 +34,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
