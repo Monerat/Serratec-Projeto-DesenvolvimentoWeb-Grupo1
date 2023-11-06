@@ -31,7 +31,9 @@ const ProdutoEspecifico = () => {
                 imgurl={produtos.imgurl}
                 descricao={produtos.descricao}
                 favoritos={produtos.favoritos}
+                deslikes={produtos.deslikes}
                 estoque={produtos.estoque}
+                categoria={produtos.categoria}
             />
         </>
     )

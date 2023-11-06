@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { api } from "../api/api";
 import { Context } from "../context/Context";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, estoque, getProdutos }) => {
+const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, deslikes, estoque, getProdutos }) => {
   const { carrinho, setCarrinho, usuarios, setUsuarios } = useContext(Context);
   const [quantidade, setQuantidade] = useState(1);
 
@@ -21,7 +21,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
           if ((prod.quantidade + quantidade) <= produto.estoque) {
             prod.quantidade = prod.quantidade + quantidade;
           }
-          else{
+          else {
             prod.quantidade = produto.estoque
           }
         }
@@ -34,7 +34,10 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
     }
   }
 
-
+  const handleDeslike = () => {
+    api.patch(`/produtos/${id}`, { deslikes: deslikes + 1 });
+    getProdutos();
+  }
 
   const handleLike = () => {
     api.patch(`/produtos/${id}`, { favoritos: favoritos + 1 });
@@ -63,6 +66,7 @@ const CardProdutoEspecifico = ({ nome, preco, imgurl, id, descricao, favoritos, 
       <Card.Body>
         <Card.Title>{nome}</Card.Title>
         <Button variant="primary" onClick={handleLike}>Gostei: {favoritos}</Button>
+        <Button variant="danger" style={{ marginLeft: "5px" }} onClick={handleDeslike}>Não Gostei: {deslikes}</Button>
         <Card.Text>Preço: R$ {preco}</Card.Text>
         <Card.Text>{descricao}</Card.Text>
         <Card.Text>Disponíveis {estoque} Unidades</Card.Text>

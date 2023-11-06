@@ -39,7 +39,8 @@
       "estoque": 15,
       "descricao": "Máscara de mergulho com design ergonômico.",
       "imgurl": "https://m.media-amazon.com/images/I/61WifZ2Ye3S.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": 1,
+      "favoritos": 11,
+      "deslikes": 18,
       "categoria": "mergulho"
     },
     {
@@ -50,6 +51,7 @@
       "descricao": "Roupa de mergulho resistente e confortável.",
       "imgurl": "https://m.media-amazon.com/images/I/51mK8Or7nNL._AC_SL1500_.jpg",
       "favoritos": 7,
+      "deslikes": 1,
       "categoria": "mergulho"
     },
     {
@@ -59,7 +61,8 @@
       "estoque": 15,
       "descricao": "Mini tanque de mergulho recarregável.",
       "imgurl": "https://m.media-amazon.com/images/I/51P0IFiABTL._AC_SL1001_.jpg",
-      "favoritos": 6,
+      "favoritos": 8,
+      "deslikes": 9,
       "categoria": "mergulho"
     },
     {
@@ -70,6 +73,7 @@
       "descricao": "Nadadeira de alta qualidade para natação.",
       "imgurl": "https://m.media-amazon.com/images/I/518rRWocLPL._AC_SL1200_.jpg",
       "favoritos": 1,
+      "deslikes": 1,
       "categoria": "natacao"
     },
     {
@@ -80,6 +84,7 @@
       "descricao": "Nadadeira de alta qualidade para natação.",
       "imgurl": "https://m.media-amazon.com/images/I/51SURxd6byL._AC_SL1200_.jpg",
       "favoritos": 9,
+      "deslikes": 1,
       "categoria": "natacao"
     }
   ],
