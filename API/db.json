@@ -29,7 +29,7 @@
       "id": 2,
       "nome": "Roupa de Mergulho",
       "preco": 599.99,
-      "estoque": 14,
+      "estoque": 13,
       "descricao": "Roupa de mergulho resistente e confortável.",
       "imgurl": "https://m.media-amazon.com/images/I/51mK8Or7nNL._AC_SL1500_.jpg",
       "favoritos": 7,
@@ -81,12 +81,6 @@
           "quantidade": 10
         }
       ]
-    },
-    {
-      "valorTotal": "0.00",
-      "idUser": 2,
-      "itens": [],
-      "id": 2
     }
   ]
 }

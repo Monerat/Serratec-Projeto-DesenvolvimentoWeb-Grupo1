@@ -4,10 +4,12 @@ import NavBar from "../components/Navbar";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { api } from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 const Carrinho = () => {
     const { carrinho, setCarrinho, usuario, usuarioLogado } = useContext(Context)
     const [totalPedido, setTotalPedido] = useState(0.0)
+    const navigate = useNavigate();
 
     const setSalvarPedido = async () => {
 
@@ -52,8 +54,8 @@ const Carrinho = () => {
             if (usuarioLogado) {
                 setSalvarPedido()
                 setNewEstoque()
-                alert("Obrigado por comprar em nosso site!")
                 handleEsvaziarCarrinho()
+                navigate("/pedidos")
             } else {
                 alert("Logue no site, antes de efetuar a compra.")
             }
