@@ -9,7 +9,7 @@ const Pedidos = () => {
     const [pedidos, setPedidos] = useState([])
     const { usuario, usuarioLogado } = useContext(Context)
     const navigate = useNavigate();
-
+    console.log(usuario)
     const getPedidos = async () => {
         if (usuarioLogado){
             const response = await api.get('/pedidos')

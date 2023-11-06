@@ -10,32 +10,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Login = () => {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [user, setUser] = useState('')
   const navigate = useNavigate();
 
   const { usuario, setUsuario, usuarioLogado, setUsuarioLogado } = useContext(Context)
 
   const getUser = async () => {
     const response = await api.get("/users");
-    setUsuario(response.data);
+    setUser(response.data);
   }
-
+  console.log(usuario)
   useEffect(() => {
     getUser()
   }, [])
 
   const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
+    setEmail(event.target.value)
+  }
 
   const handleSenha = (event) => {
-    setSenha(event.target.value);
-  };
+    setSenha(event.target.value)
+  }
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    setUsuario(usuario.filter((user) => user.email == email && user.senha == senha))
+    setUsuario(user.filter((user) => user.email === email && user.senha === senha))
     handleAuth()
-  };
+  }
 
   const handleAuth = () => {
     if (usuario[0] === undefined) {
@@ -44,7 +45,7 @@ const Login = () => {
       setUsuarioLogado(true)
       navigate("/produtos")
     }
-  };
+  }
 
   const handleCadastro = () => {
     navigate("/cadastrar")
