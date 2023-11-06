@@ -48,7 +48,7 @@ const Carrinho = () => {
             return total + (item.preco * item.quantidade);
         }, 0);
     }
-    console.log(carrinho != "")
+
     const handleSalvarPedido = () => {
         if (carrinho != "") {
             if (usuarioLogado) {

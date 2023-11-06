@@ -68,7 +68,7 @@ const Login = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
             <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
             <Form.Control onChange={handleEmail} type="email" placeholder="Informe seu E-mail" />
-            <Form.Text style={{ color: 'white' }}> 
+            <Form.Text style={{ color: 'white' }}>
               Sua senha não será compartilhada com ninguém
             </Form.Text>
           </Form.Group>

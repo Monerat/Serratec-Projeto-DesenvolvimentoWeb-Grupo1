@@ -9,15 +9,15 @@ const Pedidos = () => {
     const [pedidos, setPedidos] = useState([])
     const { usuario, usuarioLogado } = useContext(Context)
     const navigate = useNavigate()
-    
+
     const getPedidos = async () => {
-        if (usuarioLogado){
+        if (usuarioLogado) {
             const response = await api.get('/pedidos')
             const pedidosFiltrados = response.data.filter((pedido) => pedido.idUser === usuario[0].id)
             setPedidos(pedidosFiltrados)
-        }else{
-            navigate("/")            
-        }        
+        } else {
+            navigate("/")
+        }
     }
 
     useEffect(() => {
