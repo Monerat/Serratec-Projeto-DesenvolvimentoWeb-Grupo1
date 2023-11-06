@@ -5,6 +5,12 @@
       "nome": "Raphael da Rocha Pinto Barboza",
       "email": "raphaelbarboza@gmail.com",
       "senha": "123456"
+    },
+    {
+      "nome": "monerat",
+      "email": "monerat@gmail.com",
+      "senha": "123456",
+      "id": 2
     }
   ],
   "produtos": [

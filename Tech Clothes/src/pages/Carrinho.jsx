@@ -48,7 +48,7 @@ const Carrinho = () => {
     }
 
     const handleSalvarPedido = () => {
-        if(usuarioLogado){
+        if(usuarioLogado && carrinho ==""){
             setSalvarPedido()
             setNewEstoque()
             alert("Obrigado por comprar em nosso site!")

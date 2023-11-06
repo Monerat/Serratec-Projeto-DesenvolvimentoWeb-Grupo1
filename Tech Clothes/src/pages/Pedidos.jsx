@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 const Pedidos = () => {
     const [pedidos, setPedidos] = useState([])
     const { usuario, usuarioLogado } = useContext(Context)
-    const navigate = useNavigate();
-    console.log(usuario)
+    const navigate = useNavigate()
+    
     const getPedidos = async () => {
         if (usuarioLogado){
             const response = await api.get('/pedidos')
