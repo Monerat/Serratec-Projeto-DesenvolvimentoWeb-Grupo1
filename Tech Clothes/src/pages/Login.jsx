@@ -34,7 +34,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    setUsuario(user.filter((user) => user.email === email && user.senha === senha))
+    setUsuario(user.filter((user) => user.email == email && user.senha == senha))
     handleAuth()
   }
 
