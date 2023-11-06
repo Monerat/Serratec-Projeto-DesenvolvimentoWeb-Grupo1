@@ -9,7 +9,7 @@ const Produtos = () => {
 
     const getProdutos = async () => {
         const response = await api.get('/produtos')
-        const produtosFiltrados = response.data.filter((produto) => produto.quantidade !== 0) //Filtra os produtos com estoque zerado
+        const produtosFiltrados = response.data.filter((produto) => produto.estoque !== 0) //Filtra os produtos com estoque zerado
         setProdutos(produtosFiltrados)
     }
     
