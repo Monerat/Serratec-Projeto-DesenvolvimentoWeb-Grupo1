@@ -62,6 +62,7 @@ const Produtos = () => {
       {produtos.map(
         ({ nome, preco, id, imgurl }) => (
           <CardProduto
+            key={id}
             nome={nome}
             preco={preco}
             id={id}
