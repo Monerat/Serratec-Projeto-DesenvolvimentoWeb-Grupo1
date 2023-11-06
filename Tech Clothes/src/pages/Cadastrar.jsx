@@ -67,27 +67,26 @@ const Cadastrar = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-                <Form onSubmit={handleCadastrar} onReset={handleLimparForm}>
-                    <Form.Group className="mb-3" controlId="formBasicNome" style={{ margin: '10px' }}>
-                        <Form.Label style={{ color: 'white' }}>Nome</Form.Label>
-                        <Form.Control onChange={handleNome} value={nome} type="text" style={{ color: 'white' }} placeholder="Informe seu Nome" />
-                        <Form.Text className="text-muted">
-                        </Form.Text>
-                    </Form.Group>
+                <Form style={{backgroundColor: '#03053db0', borderRadius: "8px"}} onSubmit={handleCadastrar} onReset={handleLimparForm} >
+                        <Form.Group className="mb-3" controlId="formBasicNome" style={{ margin: '10px' }}>
+                            <Form.Label style={{ color: 'white' }}>Nome</Form.Label>
+                            <Form.Control onChange={handleNome} value={nome} type="text" style={{ color: 'white' }} placeholder="Informe seu Nome" />
+                            <Form.Text className="text-muted">
+                            </Form.Text>
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
-                        <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
-                        <Form.Control onChange={handleEmail} value={email} type="email" placeholder="Informe seu Email" />
-                        <Form.Text style={{ color: 'white' }}>
-                            Sua senha não será compartilhada com ninguém
-                        </Form.Text>
-                    </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
+                            <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
+                            <Form.Control onChange={handleEmail} value={email} type="email" placeholder="Informe seu Email" />
+                            <Form.Text style={{ color: 'white' }}>
+                                Sua senha não será compartilhada com ninguém
+                            </Form.Text>
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword" style={{ margin: '10px' }}>
-                        <Form.Label style={{ color: 'white' }}>Senha</Form.Label>
-                        <Form.Control onChange={handleSenha} value={senha} type="password" placeholder="Informe sua Senha" />
-                    </Form.Group>
-
+                        <Form.Group className="mb-3" controlId="formBasicPassword" style={{ margin: '10px' }}>
+                            <Form.Label style={{ color: 'white' }}>Senha</Form.Label>
+                            <Form.Control onChange={handleSenha} value={senha} type="password" placeholder="Informe sua Senha" />
+                        </Form.Group>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                         <Button variant="danger" type="reset" style={{ margin: '10px' }}>
                             Limpar

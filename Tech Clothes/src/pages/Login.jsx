@@ -64,7 +64,7 @@ const Login = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <Form onSubmit={handleLogin} onReset={handleCadastro}>
+        <Form style={{backgroundColor: '#03053db0', borderRadius: "8px"}} onSubmit={handleLogin} onReset={handleCadastro}>
           <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
             <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
             <Form.Control onChange={handleEmail} type="email" placeholder="Informe seu E-mail" />
