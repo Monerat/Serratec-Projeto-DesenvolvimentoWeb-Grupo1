@@ -54,7 +54,7 @@ const Login = () => {
     <>
       <NavBar />
       <div style={{
-        backgroundImage: 'url("https://images.alphacoders.com/103/103593.jpg")',
+        backgroundImage: 'url("https://www.adventureclub.com.br/wp-content/uploads/2020/11/Background-apresentacao-18-min.png")',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -66,15 +66,15 @@ const Login = () => {
       }}>
         <Form onSubmit={handleLogin} onReset={handleCadastro}>
           <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
-            <Form.Label>E-mail</Form.Label>
-            <Form.Control onChange={handleEmail} type="email" placeholder="Informe seu Email" />
-            <Form.Text className="text-muted">
+            <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
+            <Form.Control onChange={handleEmail} type="email" placeholder="Informe seu E-mail" />
+            <Form.Text style={{ color: 'white' }}> 
               Sua senha não será compartilhada com ninguém
             </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword" style={{ margin: '10px' }}>
-            <Form.Label>Senha</Form.Label>
+            <Form.Label style={{ color: 'white' }}>Senha</Form.Label>
             <Form.Control onChange={handleSenha} type="password" placeholder="Informe sua Senha" />
           </Form.Group>
 

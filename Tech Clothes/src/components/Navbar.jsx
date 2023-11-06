@@ -19,10 +19,10 @@ const NavBar = () => {
           Produtos
         </Link>
         <Link to="/pedidos" style={{ color: 'white', textDecoration: 'none', fontSize: '35px', marginRight: '1px', fontWeight: 'bold' }}>
-          Historico de pedidos
+          Histórico de Pedidos
         </Link>
         <Link to="/carrinho" style={{ textDecoration: 'none' }}>
-          <img src="https://www.svgrepo.com/show/477419/shopping-cart-14.svg" alt="carrinho" style={{ width: '100px' }} />
+          <img src="https://cdn.discordapp.com/attachments/1135258526965583942/1171162805316091914/image.png?ex=655bad5b&is=6549385b&hm=bf0d9a413459f4d8d1fa6724bd26cbbc844409eb0c031e10946369f3d6f531c6&" alt="carrinho" style={{ width: '100px' }} />
         </Link>
       </Container>
     </Navbar>
