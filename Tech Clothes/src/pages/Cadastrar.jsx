@@ -57,7 +57,7 @@ const Cadastrar = () => {
         <>
             <NavBar />
             <div style={{
-                backgroundImage: 'url("https://images.alphacoders.com/103/103593.jpg")',
+                backgroundImage: 'url("https://www.adventureclub.com.br/wp-content/uploads/2020/11/Background-apresentacao-18-min.png")',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -69,22 +69,22 @@ const Cadastrar = () => {
             }}>
                 <Form onSubmit={handleCadastrar} onReset={handleLimparForm}>
                     <Form.Group className="mb-3" controlId="formBasicNome" style={{ margin: '10px' }}>
-                        <Form.Label>Nome</Form.Label>
-                        <Form.Control onChange={handleNome} value={nome} type="text" placeholder="Informe seu Nome" />
+                        <Form.Label style={{ color: 'white' }}>Nome</Form.Label>
+                        <Form.Control onChange={handleNome} value={nome} type="text" style={{ color: 'white' }} placeholder="Informe seu Nome" />
                         <Form.Text className="text-muted">
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail" style={{ margin: '10px' }}>
-                        <Form.Label>E-mail</Form.Label>
+                        <Form.Label style={{ color: 'white' }}>E-mail</Form.Label>
                         <Form.Control onChange={handleEmail} value={email} type="email" placeholder="Informe seu Email" />
-                        <Form.Text className="text-muted">
+                        <Form.Text style={{ color: 'white' }}>
                             Sua senha não será compartilhada com ninguém
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword" style={{ margin: '10px' }}>
-                        <Form.Label>Senha</Form.Label>
+                        <Form.Label style={{ color: 'white' }}>Senha</Form.Label>
                         <Form.Control onChange={handleSenha} value={senha} type="password" placeholder="Informe sua Senha" />
                     </Form.Group>
 
