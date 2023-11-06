@@ -14,7 +14,7 @@ const Carrinho = () => {
         try {
             let pedido = 
             {
-                valorTotal: totalPedido,
+                valorTotal: totalPedido.Math.ceil(),
                 idUser: usuario[0].id,
                 itens: carrinho.map(({ id, quantidade }) => {
                     return{
